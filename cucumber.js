@@ -14,7 +14,6 @@ if (!fs.existsSync(resultsDir)) {
  * Cucumber profiles for different browser / devices
  */
 
-// Node parameters set via command line or CI
 const common = {
   format: [
     `json:./e2e/results/cucumber-report.json`,

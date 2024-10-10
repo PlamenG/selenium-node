@@ -1,0 +1,29 @@
+{
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+        "name": "E2E Tests",
+        "type": "node",
+        "request": "launch",
+        "console": "integratedTerminal",
+        "program": "${workspaceFolder}/node_modules/@cucumber/cucumber/bin/cucumber-js",
+        "args": [
+            /* "--tags",
+            "@your-tags" */
+        ]
+        },
+        {
+        "name": "E2E Current Feature",
+        "type": "node",
+        "request": "launch",
+        "console": "integratedTerminal",
+        "program": "${workspaceFolder}/node_modules/@cucumber/cucumber/bin/cucumber-js",
+        "args": [
+            "-p", // cucumberjs --profile
+            "debug", // use cucumberjs debug profile in cucumber.js config
+            "${relativeFile}" // run tests for current file (must be .feature)
+        ]
+        }
+    ]
+}
