@@ -9,10 +9,11 @@ export class TestWorld extends World {
   constructor(
     options: IWorldOptions,
     driver: WebDriver,
+    pageObjects: PageObjects
   ) {
     super(options);
     this.driver = driver;
-    this.pageObjects = new PageObjects(driver);
+    this.pageObjects = pageObjects;
   }
 }
 
