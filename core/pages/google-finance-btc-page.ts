@@ -1,18 +1,15 @@
 import { By, WebDriver } from "selenium-webdriver";
+import { BasePage } from "./base-page";
 
-export class GoogleFinanceBtcPage {
-    private driver: WebDriver;
-
-    constructor(driver: WebDriver) {
-        this.driver = driver;
-    }
+export class GoogleFinanceBtcPage extends BasePage {
+    private btcPriceLocator = By.css('[data-source="BTC"] > div > div > div:nth-child(1) span div div');
 
     async navigate() {
         await this.driver.get('https://www.google.com/finance?q=bitcoin');
     }
-    
+
     async getBtcValue() {
-        const btcValueElement = await this.driver.findElement(By.css('span[jsname="vWLAgc"]'));
+        const btcValueElement = await this.findElement(this.btcPriceLocator);
         return await btcValueElement.getText();
     }
 }
