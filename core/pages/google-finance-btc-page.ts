@@ -22,9 +22,10 @@ export class GoogleFinanceBtcPage extends BasePage {
         while(Date.now() - startTimestamp < durationInMs) {
             const btcValue = await this.getBtcValue();
             btcValues.push(btcValue);
-            console.log(`BTC Value stored: ${btcValue}`);
+            console.log(`BTC Value stored: ${btcValue} after ${(Date.now() - startTimestamp)} elapsed ms`);
             await this.delayInterval(intervalInMs);
         }
+        console.log(`Looping trough for: ${(Date.now() - startTimestamp)/1000} seconds`);
 
         return btcValues;
     }
