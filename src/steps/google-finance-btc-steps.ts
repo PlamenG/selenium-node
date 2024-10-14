@@ -7,5 +7,5 @@ let driver: WebDriver;
 Given('I open Google homepage', async function (this: TestWorld) {
   await this.pageObjects.googleFinanceBtcPage.navigate();
   let value = await this.pageObjects.googleFinanceBtcPage.getBtcValue();
-  console.log(value);
+  console.log(`((((((((((((((((((((((((((((((${value}))))))))))))))))))))))))))))))`);
 });
